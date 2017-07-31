@@ -1,0 +1,375 @@
+/***** Bordex box *****/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/***** FONTS *****/
+:root {
+  font-family: 'Josefin Sans', Tahoma, Verdana, sans-serif;
+  font-size: 1em; }
+
+/***** BUTTONS *****/
+form {
+  margin: 1.2em;
+  text-align: center; }
+
+/* Search button */
+#search {
+  max-width: 200px;
+  padding: 8px;
+  border: 2px solid #c8c4c4;
+  border-radius: 3px;
+  width: 140px; }
+
+/* Reset button */
+#resetButton {
+  max-width: 60px;
+  border: 2px solid #c8c4c4;
+  border-radius: 3px;
+  padding: 8px 8px;
+  width: 200px; }
+
+/* Styling the 'not-found' img */
+#not-found {
+  width: 35%;
+  margin-top: 3em; }
+
+/***** GALLERY *****/
+
+/* Styling the div .gallery */
+.gallery {
+  width: 100%;
+  max-width: 625px;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 2.5em;
+  text-align: center; }
+
+/* Styling the thumbnails: 1 per col for mobile */
+.gallery .thumbnails {
+  width: 80%;
+  max-width: 200px;
+  margin: .7em; }
+
+/* Hover effects */
+.thumbnails:hover {
+  border: 3px solid #3e2b14;
+  padding: 2px; }
+
+/* Disable image titles on hover */
+.image-wrapper{
+  display: inline;
+  position: relative; }
+
+.middle { display: none; }
+.thumbnails { display: inline; }
+.text { display: none;}
+
+
+/***** LIGHTBOX *****/
+
+/* Background overlay */
+.mfp-bg {
+  opacity: 0.9;
+  background: #302c2f; }
+
+/* Styles for the close('x') button */
+button.mfp-close {
+  margin: 0 auto;
+  width: 50%;
+  font-size: 2.5em;
+  top: -10px;
+  max-width: 50px; }
+
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: pointer; }
+
+/* Adjusting the height of arrows */
+.mfp-arrow-left,
+.mfp-arrow-right { top: 75%; }
+
+/* Disable the default highlighting after closing the lightbox */
+a {outline: none;}
+
+/* Styles for the img caption */
+.mfp-title {
+  text-align: center;
+  padding: 5px;
+  margin-top: 1rem;
+  width: 80%;
+  margin: 0 auto; }
+
+/* Disable the default zoom-out cursor */
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: auto; }
+
+/* Remove the default img background with the box-shadow effect   */
+.mfp-figure:after {
+  box-shadow: none;
+  background: none; }
+
+/* Disable the img counter */
+.mfp-counter { display: none; }
+
+
+/********** MEDIA QUERIES **********/
+
+/***** LIGHTBOX *****/
+
+/* larger font for the img caption */
+@media (min-width: 450px) {
+  .mfp-title { font-size: 1.2em; }
+} /* END of media query (450px) */
+
+/* Top margin for the img caption */
+@media (min-width: 570px) {
+  .mfp-title { margin-top: 2rem; }
+} /* END of media query (57px) */
+
+
+/***** TABLETS *****/
+@media (min-width: 768px) {
+
+/***** BUTTONS *****/
+form {
+    margin: 2em auto;
+    margin-bottom: 2em; }
+
+/* Search button */
+  #search {
+    max-width: 320px;
+    padding: 10px;
+    border: 2px solid #c8c4c4;
+    width: 200px;
+    transition:
+      all        1.2s,
+      border     0.5s 1.2s,
+      box-shadow 0.3s 1.5s;
+    white-space: nowrap; }
+  #search:hover {
+        background: #c4d7d5;
+        color: #947415; }
+
+  /* Reset button */
+  #resetButton {
+    max-width: 70px;
+    border: 2px solid #c8c4c4;
+    font-size: 1em;
+    border-radius: 3px;
+    padding: 8px 8px;
+    width: 200px;
+    transition:
+      all        0.6s,
+      border     0.2s 0.4s,
+      box-shadow 0.3s 0.5s; }
+  #resetButton:hover {
+        background: #e7dbd7;
+        font-weight: bold;
+        border: 2px solid #c8c4c4; }
+
+
+/* Styling the 'not-found' img */
+  #not-found { width: 25%; }
+
+/***** GALLERY *****/
+
+/* Styling the div .gallery */
+  .gallery {
+    margin: 0 auto;
+    margin-bottom: 2em;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 760px; }
+
+/* Styling the thumbnails */
+  .gallery .thumbnails {
+    max-width: 190px;
+    margin: .8em; }
+
+/* Enable image titles on hover */
+  .image-wrapper{
+    display: inline;
+    position: relative; }
+
+    .middle {
+      width: 150px;
+      display: inline;
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+
+    .thumbnails {
+       transition: .5s ease;
+       backface-visibility: hidden;
+       opacity: 1; }
+
+    .image-wrapper:hover .thumbnails { opacity: 0.3; }
+    .image-wrapper:hover .middle { opacity: 1; }
+
+    .text {
+      display: inline;
+      color: black;
+      font-weight: bold;
+      font-size: .9em;
+      padding: 2px 2px;
+      text-decoration: none;
+      margin: 0 auto; }
+/**************************/
+
+
+/***** LIGHTBOX *****/
+
+/* Styles for the main img holder container */
+  .mfp-figure { width: 720px; }
+
+/* Styles for the arrows */
+  .mfp-arrow-left,
+  .mfp-arrow-right {
+    height: 15%;
+    width: 90px;
+    top: 50%; }
+
+/* Caption title */
+  .mfp-title {
+    font-size: 1.2em;
+    margin: 1.4em auto;
+    width: 70%;
+    line-height: 1.1em; }
+
+/* Styles for the img */
+  img.mfp-img { max-width: 90%; }
+
+/* Styling the close button('x') */
+  .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+    cursor: pointer;
+    right: 5%; }
+
+} /* END of media query (768px) */
+
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+
+/***** BUTTONS *****/
+
+/* Search button */
+  #search {
+    width: 40%;
+    max-width: 420px;
+    padding: 12px;
+    border-radius: 3px;
+    font-size: 1em; }
+
+/* Reset button */
+  #resetButton { padding: 12px 8px; }
+
+/* Styling the 'not-found' img */
+  #not-found {
+    width: 17%;
+    animation: shake 0.92s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px; }
+  @keyframes shake {
+    10%, 90% {transform: translate3d(-1px, 0, 0);}
+    20%, 80% {transform: translate3d(2px, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+    40%, 60% {transform: translate3d(4px, 0, 0);}
+  }
+
+
+/***** GALLERY *****/
+
+/* Styling the div .gallery */
+  .gallery {
+    margin: 0 auto;
+    margin-bottom: 2.5em;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 1090px; }
+
+/* Styling the thumbnails */
+  .gallery .thumbnails {
+    width: 18.5%;
+    max-width: 230px;
+    margin: 1.9em; }
+
+  .text { font-size: 1.1em; }
+
+
+/***** LIGHTBOX *****/
+
+/* Styles for the close('x') button */
+  button.mfp-close { padding-right: 15px; }
+
+/* Caption title */
+  .mfp-title {
+    font-size: 1.1em;
+    margin: 2em auto;
+    width: 600px;
+    line-height: 1.5em;
+    letter-spacing: 1px; }
+
+/* Styles for the main img holder container */
+  .mfp-figure { width: 900px; }
+
+/* Styles and effects for the lightbox arrows  */
+  .mfp-arrow-right { right: 0; }
+  .mfp-arrow-left { left: 0; }
+
+  @keyframes spaceboots {
+    0% { transform: translate(2px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(2px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(2px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  button.mfp-arrow:hover,
+  button.mfp-arrow:focus {
+    animation-name: spaceboots;
+    animation-duration: 0.8s;
+    transform-origin:50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+
+  button.mfp-close:hover,
+  button.mfp-close:focus {
+    animation-name: spaceboots;
+    animation-duration: 0.8s;
+    transform-origin: 90% 90%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+
+
+}/* END of media query (1024px) */
+
+
+/* Positioning the arrows */
+@media (min-width: 1150px) {
+  .mfp-arrow-right {margin-right: 40px;}
+  .mfp-arrow-left {margin-left: 40px;}
+}
+
+@media (min-width: 1350px) {
+  .mfp-arrow-right {margin-right: 120px;}
+  .mfp-arrow-left {margin-left: 120px;}
+}
+
+@media (min-width: 1600px) {
+  .mfp-arrow-right {margin-right: 280px;}
+  .mfp-arrow-left {margin-left: 280px;}
+}
